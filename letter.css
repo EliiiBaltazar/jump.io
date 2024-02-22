@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('bg.gif'); /* Adjust the path accordingly */
+    background-size: cover; /* Cover the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #000; /* Fallback color */
+}
+
+
+.animated-text {
+    font-size: 72px;
+    color: #efb2b7;
+    text-align: center;
+    font-family: 'Bubblegum Sans', cursive;
+    transition: transform 0.3s ease;
+    animation: glow 1.5s infinite alternate;
+}
+
+.animated-text span {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    animation: wave 0.5s infinite;
+    color: #ef00a0;
+}
+.animated-text span {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Initial state */
+.animated-text span {
+    color: #c67df6;
+    text-shadow: 0 0 8px #c67df6, 0 0 10px #ff006a; /* Bright gradient shadow */
+    
+}
+
+/* Hover state */
+.animated-text span:hover {
+    color: #fff; /* Change color on hover */
+    text-shadow: 0 0 20px #FF00FF, 0 0 30px #0000FF; /* Bright gradient shadow */
+}
+
+
+.letters {
+    perspective: 1000px;
+}
+
+.letter {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    user-select: none;
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+
+    &.active {
+        animation: jump 1s ease-in-out;
+        transform-origin: bottom left;
+    }
+    .footer-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #FFFF00; 
+    }
+}
+
+
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+    75% {
+        transform: scale(1, 1) translate(-200px,);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes rainbowTrail {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+}
